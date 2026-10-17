@@ -5,6 +5,7 @@ import cors from "cors";
 import sequelize from "./config/db.js";
 import assessmentRouter from "./src/router/assessment.router.js";
 import questionRouter from "./src/router/question.router.js";
+import assessmentAnswerRouter from "./src/router/assessmentAnswer.router.js";
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/assessments", assessmentRouter);
 app.use("/api/questions", questionRouter);
+app.use("/api/assessment-answers", assessmentAnswerRouter);
 
 const PORT = process.env.PORT || 5000;
 
